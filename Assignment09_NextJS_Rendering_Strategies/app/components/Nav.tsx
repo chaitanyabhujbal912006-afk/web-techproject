@@ -1,0 +1,1 @@
+export default function Nav(){return <nav className="nav"><a className="mark" href="/">R</a><a className="brand" href="/">RenderLab</a><div className="navlinks"><a href="/">Blog</a><a href="/dashboard">Dashboard (SSR)</a><a href="/api/metrics">Metrics API</a></div></nav>}

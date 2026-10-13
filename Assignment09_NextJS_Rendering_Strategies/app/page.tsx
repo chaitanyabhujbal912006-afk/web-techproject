@@ -1,0 +1,7 @@
+import Link from "next/link";
+import Nav from "./components/Nav";
+import { posts } from "../lib/posts";
+export const dynamic = "force-static";
+export default function HomePage(){
+ return <main className="shell"><Nav/><section className="hero"><p className="eyebrow">NEXT.JS APP ROUTER · ASSIGNMENT 09</p><h1>One blog. <span>Four rendering strategies.</span></h1><p className="lead">Explore Static Site Generation, Incremental Static Regeneration, Server-Side Rendering, and React Server Components in one working application.</p><p className="meta">Post index uses SSG · Individual articles use ISR · Dashboard uses SSR</p></section><div className="section-head"><h2>Latest articles</h2><span className="tag">STATICALLY GENERATED</span></div><section className="grid">{posts.map(post=><article className="card" key={post.id}><span className="tag">{post.category}</span><h2>{post.title}</h2><p>{post.excerpt}</p><p className="meta">{post.date} · {post.readTime}</p><Link className="text-link" href={`/posts/${post.id}`}>Read article →</Link></article>)}</section><div className="note">This post list is statically generated. Open an article to see ISR, or visit the dashboard to see request-time rendering.</div><footer className="footer">RenderLab · Educational demonstration of Next.js App Router</footer></main>
+}
